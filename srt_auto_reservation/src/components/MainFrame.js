@@ -40,7 +40,8 @@ const MainFrame = () => {
     id : '',
     password : '',
     dptArea : '',
-    ArrArea : '',
+    arrArea : '',
+    date : '',
     time : '',
 
   })
@@ -55,12 +56,16 @@ const MainFrame = () => {
     setReservationInfo({...reservationInfo,dptArea:e.target.value})
   }
   const onArrChange = (e) => {
-    setReservationInfo({...reservationInfo,ArrArea:e.target.value})
+    setReservationInfo({...reservationInfo,arrArea:e.target.value})
+  }
+  const onDateChange = (e) => {
+    setReservationInfo({...reservationInfo,date:e.target.value})
+   
   }
   const onTimeChange = (e) => {
     setReservationInfo({...reservationInfo,time:e.target.value})
- 
   }
+  
 
   const submit = async() => {
     console.log(reservationInfo)
@@ -89,6 +94,10 @@ const MainFrame = () => {
         <div>
           <span>도착지</span>
           <input onChange={onArrChange}/>
+        </div>
+        <div>
+          <span>날짜</span>
+          <input onChange={onDateChange}/>
         </div>
         <div>
           <span>시간</span>

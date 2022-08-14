@@ -82,7 +82,8 @@ def search_train(driver, dpt_stn, arr_stn, dpt_dt, dpt_tm, num_trains_to_check=5
 
 
 # if __name__ == "__main__":
-
-driver = open_chrome()
-driver = login(driver, '2281900844', 'ehdgus95!') # 회원 번호, 비밀번호
-search_train(driver, "동대구", "동탄", "20220815", "16", want_reserve=True)
+def run(id,pw,dpt,arr,date,time):
+    print('들어는옴?')
+    driver = open_chrome()
+    driver = login(driver, id, pw) # 회원 번호, 비밀번호
+    search_train(driver, dpt, arr, date, time, want_reserve=True)
